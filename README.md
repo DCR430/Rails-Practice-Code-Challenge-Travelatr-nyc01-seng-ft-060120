@@ -14,6 +14,14 @@ We envision a relationship between our models as follows:
 
 Blogger -< Post >- Destination
 
+blogger has_many :posts 
+blogger has_many :destinations, through: posts
+destination has_many :posts
+destination has_many :bloggers, through: posts
+
+post belongs_to blogger
+post belongs_to destination 
+
 
 For each model, we have a specific vision in mind:
 
