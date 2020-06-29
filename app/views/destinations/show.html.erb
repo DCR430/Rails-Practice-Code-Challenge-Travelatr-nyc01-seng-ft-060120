@@ -5,7 +5,17 @@
 <p><%=@destination.name%></p>
 <p><%=@destination.country%></p>
 
-<h3>Posts</h3>
-<%@destination.posts.each do |post|%>
-<p><%= post.title%></p> 
-<%end%>
+
+
+<h2> Post </h2>
+<% @destination.posts.last(2).each do |post| %>
+	<%= post.title %>
+<% end %>
+
+<h2> Bloggers Age </h2>
+<% @destination.bloggers.each do |blogger| %>
+	<%= blogger.age %>
+<%end %>
+
+
+
